@@ -1,0 +1,5 @@
+spring:
+  config:
+    name: pure-admin-ddd-app
+  profiles:
+    active: dev
