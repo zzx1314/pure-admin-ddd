@@ -1,5 +1,19 @@
-### 生产者
+### 简单生产者
 GET http://localhost:8091/kafka/normal/helloword
 Accept: application/json
+
+### 生产者回调的第一种写法
+GET http://localhost:8091/kafka/callbackOne/helloword
+Accept: application/json
+
+### 生产者回调的第二种写法
+GET http://localhost:8091/kafka/callbackTwo/helloword
+Accept: application/json
+
+
+### 生产者事务
+GET http://localhost:8091/kafka/transaction/helloword
+Accept: application/json
+
 
 ###
