@@ -1,5 +1,6 @@
 package com.pure.config;
 
+import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.listener.ConsumerAwareListenerErrorHandler;
+import org.springframework.kafka.listener.ListenerExecutionFailedException;
 import org.springframework.kafka.support.ProducerListener;
+import org.springframework.messaging.Message;
 
 @Configuration
 public class KafkaConfig {
@@ -30,6 +34,20 @@ public class KafkaConfig {
             }
         });
         return kafkaTemplate;
+    }
+
+    /**
+     * 消费者异常处理器
+     */
+    @Bean
+    public ConsumerAwareListenerErrorHandler consumerAwareErrorHandler() {
+        return new ConsumerAwareListenerErrorHandler() {
+            @Override
+            public Object handleError(Message<?> message, ListenerExecutionFailedException exception, Consumer<?, ?> consumer) {
+                System.out.println("消费异常：" + message.getPayload());
+                return null;
+            }
+        };
     }
 }
 

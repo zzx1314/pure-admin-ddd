@@ -94,8 +94,11 @@ public class kafkaProducer {
         kafkaTemplate.executeInTransaction(new KafkaOperations.OperationsCallback<String, Object, Object>() {
             @Override
             public Object doInOperations(KafkaOperations<String, Object> operations) {
-                operations.send("sb_topic", message + " test executeInTransaction");
-                // throw new RuntimeException("fail");
+                List<String> messages = List.of("hello", "world", "spring", "kafka", "message");
+                for (String one:messages){
+                    operations.send("sb_topic", one);
+                }
+                //throw new RuntimeException("fail");
                 return true;
             }
         });
