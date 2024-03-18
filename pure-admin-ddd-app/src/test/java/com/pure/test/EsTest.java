@@ -1,18 +1,16 @@
 package com.pure.test;
 
-import co.elastic.clients.elasticsearch.ElasticsearchAsyncClient;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
+import co.elastic.clients.elasticsearch.core.IndexResponse;
 import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.ElasticsearchTransport;
 import co.elastic.clients.transport.TransportUtils;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.Header;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.message.BasicHeader;
 import org.elasticsearch.client.RestClient;
 
 import javax.net.ssl.SSLContext;
@@ -60,7 +58,7 @@ public class EsTest {
 
         // Create the transport and the API client
         ElasticsearchTransport transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
-        //ElasticsearchClient client = new ElasticsearchClient(transport);
+        ElasticsearchClient client = new ElasticsearchClient(transport);
 
         /*client.indices().create(c -> c
                 .index("products")
@@ -72,7 +70,7 @@ public class EsTest {
         }*/
 
         // Asynchronous non-blocking client
-        ElasticsearchAsyncClient asyncClient = new ElasticsearchAsyncClient(transport);
+        /*ElasticsearchAsyncClient asyncClient = new ElasticsearchAsyncClient(transport);
 
         asyncClient
                 .exists(b -> b.index("products").id("foo"))
@@ -82,6 +80,15 @@ public class EsTest {
                     } else {
                         log.info("Product exists");
                     }
-                });
+                });*/
+
+        Product product = new Product("bk-1", "City bike", 123.0);
+
+        IndexResponse response = client.index(i -> i
+                .index("products")
+                .id(product.getSku())
+                .document(product)
+        );
+        log.info("Indexed with version " + response.version());
     }
 }
