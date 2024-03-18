@@ -75,3 +75,14 @@ logging:
   level:
     root: info
   config: classpath:logback-spring.xml
+
+# es的工具
+pure:
+  elastic:
+    config:
+      host: 10.64.16.173
+      port: 9200
+      scheme: https
+      fingerprint: F7:D8:DD:0C:18:E9:86:07:8B:4C:D3:C6:07:2C:AB:F3:D5:A1:26:12:E2:A7:2F:F5:20:92:F7:3C:25:2A:B5:E2
+      username: elastic
+      password: 123456
