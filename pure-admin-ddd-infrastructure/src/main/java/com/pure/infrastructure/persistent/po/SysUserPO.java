@@ -1,6 +1,7 @@
 package com.pure.infrastructure.persistent.po;
 
 
+import io.mybatis.provider.Entity;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
  * @Version 1.0
  */
 @Data
+@Entity.Table(value = "sys_user", remark = "系统用户", autoResultMap = true)
 public class SysUserPO implements Serializable {
 
 
@@ -22,6 +24,7 @@ public class SysUserPO implements Serializable {
 	/**
 	 * 主键
 	 */
+	@Entity.Column(id = true, remark = "主键")
 	private Integer id;
 
 	/**

@@ -19,6 +19,10 @@
             <artifactId>mybatis-mapper</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.mybatis</groupId>
+            <artifactId>mybatis-activerecord</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
