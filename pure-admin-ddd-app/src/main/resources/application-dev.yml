@@ -74,6 +74,8 @@ spring:
 logging:
   level:
     root: info
+    org.mybatis: DEBUG
+    com.pure.infrastructure.persistent.dao: DEBUG
   config: classpath:logback-spring.xml
 
 # es的工具

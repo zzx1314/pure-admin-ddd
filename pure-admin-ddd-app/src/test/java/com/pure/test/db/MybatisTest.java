@@ -11,13 +11,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class MybatisTest {
     @Resource
-    ISysUserRepository<SysUserPO, Long> sysUserRepository;
+    ISysUserRepository<SysUserPO, Integer> sysUserRepository;
 
     @Test
     public void testAdd() {
@@ -26,5 +27,11 @@ public class MybatisTest {
         sysUserPO.setPassword("123456");
         sysUserPO.setCreateTime(LocalDateTime.now());
         sysUserRepository.insert(sysUserPO);
+    }
+
+    @Test
+    public void testSelectById() {
+        Optional<SysUserPO> sysUserPO = sysUserRepository.selectById(8);
+        sysUserPO.ifPresent(one -> log.info("{}", one));
     }
 }
