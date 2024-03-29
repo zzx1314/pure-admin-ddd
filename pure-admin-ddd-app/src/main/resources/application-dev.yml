@@ -78,6 +78,11 @@ logging:
     com.pure.infrastructure.persistent.dao: DEBUG
   config: classpath:logback-spring.xml
 
+# mybatis 配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 # es的工具
 pure:
   elastic:
