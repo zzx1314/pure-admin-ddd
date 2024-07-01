@@ -1,0 +1,5 @@
+### GET 通过id进行查询
+GET http://localhost:8091/sysUser/getUserById/1
+Accept: application/json
+
+###

@@ -1,13 +1,14 @@
 package com.pure.infrastructure.persistent.repository;
 
 import com.pure.domain.base.repository.IBaseRepository;
+import com.pure.infrastructure.persistent.mapper.MyMapper;
 import io.mybatis.activerecord.MapperRecord;
 import io.mybatis.mapper.BaseMapper;
 
 import java.io.Serializable;
 import java.util.Optional;
 
-public class BaseRepository <T,I extends Serializable> implements IBaseRepository<T, I>, MapperRecord<T, I, BaseMapper<T, I>> {
+public class BaseRepository <T,I extends Serializable> implements IBaseRepository<T, I>, MapperRecord<T, I, MyMapper<T, I>> {
     /**
      * 新增数据
      * @param t 实体类

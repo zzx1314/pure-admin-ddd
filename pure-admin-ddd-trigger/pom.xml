@@ -37,6 +37,7 @@
             <groupId>com.pure</groupId>
             <artifactId>pure-admin-ddd-types</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.pure</groupId>
             <artifactId>pure-admin-ddd-domain</artifactId>
