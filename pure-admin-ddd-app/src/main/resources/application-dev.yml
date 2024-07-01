@@ -30,7 +30,7 @@ spring:
       connection-test-query: SELECT 1 # 配置一个测试查询语句以验证连接是否有效（适用于不支持ping的数据库
     type: com.zaxxer.hikari.HikariDataSource
   kafka: # -----------------------kafka配置-------------------------
-    bootstrap-servers: 10.66.0.251:9092 #这个是kafka的地址,对应你server.properties中配置的
+    bootstrap-servers: 192.168.196.200:9092 #这个是kafka的地址,对应你server.properties中配置的
     producer:
       batch-size: 16384 #批量大小
       acks: -1 #应答级别:多少个分区副本备份完成时向生产者发送ack确认(可选0、1、all/-1)
@@ -66,6 +66,9 @@ spring:
     listener:
       missing-topics-fatal: false # consumer listener topics 不存在时，启动项目就会报错
       type: batch
+  application: # 系统拦截器
+    interceptor:
+      enabled: true
 #mybatis:
 #  mapper-locations: classpath:/mybatis/mapper/*.xml
 #  config-location:  classpath:/mybatis/config/mybatis-config.xml
@@ -83,7 +86,7 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-# es的 配置
+# es8的配置
 pure:
   elastic:
     config:
