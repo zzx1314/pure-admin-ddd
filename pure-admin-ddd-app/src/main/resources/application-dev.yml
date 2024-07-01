@@ -83,7 +83,7 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-# es的工具
+# es的 配置
 pure:
   elastic:
     config:
