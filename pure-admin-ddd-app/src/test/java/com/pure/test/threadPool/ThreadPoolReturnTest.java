@@ -7,6 +7,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
+/**
+ * 有返回值的线程
+ */
 public class ThreadPoolReturnTest {
     @Test
     public void testThreadPool() throws ExecutionException, InterruptedException {
