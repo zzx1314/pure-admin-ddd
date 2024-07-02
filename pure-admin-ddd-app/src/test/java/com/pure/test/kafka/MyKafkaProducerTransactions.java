@@ -1,4 +1,4 @@
-package com.pure.test;
+package com.pure.test.kafka;
 
 
 import org.apache.kafka.clients.producer.KafkaProducer;

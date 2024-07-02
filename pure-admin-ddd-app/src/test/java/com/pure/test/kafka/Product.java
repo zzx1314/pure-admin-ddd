@@ -1,4 +1,4 @@
-package com.pure.test;
+package com.pure.test.kafka;
 
 import com.pure.types.annotation.EsDataId;
 import com.pure.types.annotation.EsDataIndex;
