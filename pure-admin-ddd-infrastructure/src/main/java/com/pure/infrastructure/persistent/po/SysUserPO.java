@@ -1,8 +1,10 @@
 package com.pure.infrastructure.persistent.po;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.mybatis.provider.Entity;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -50,11 +52,15 @@ public class SysUserPO implements Serializable {
 	/**
 	 * 锁定时间
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime lockTime;
 
 	/**
 	 * 上次登录时间
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime lastLoginTime;
 
 	/**
@@ -70,11 +76,15 @@ public class SysUserPO implements Serializable {
 	/**
 	 * 创建时间
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime createTime;
 
 	/**
 	 * 修改时间
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime modifiedTime;
 
 	/**
@@ -90,6 +100,8 @@ public class SysUserPO implements Serializable {
 	/**
 	 * 密码修改时间
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime passUpdateTime;
 
 	/**
