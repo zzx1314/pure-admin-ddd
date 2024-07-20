@@ -1,3 +1,4 @@
+/*
 package com.pure.config;
 
 import org.apache.kafka.clients.consumer.Consumer;
@@ -36,9 +37,11 @@ public class KafkaConfig {
         return kafkaTemplate;
     }
 
-    /**
+    */
+/**
      * 消费者异常处理器
-     */
+     *//*
+
     @Bean
     public ConsumerAwareListenerErrorHandler consumerAwareErrorHandler() {
         return new ConsumerAwareListenerErrorHandler() {
@@ -51,3 +54,4 @@ public class KafkaConfig {
     }
 }
 
+*/

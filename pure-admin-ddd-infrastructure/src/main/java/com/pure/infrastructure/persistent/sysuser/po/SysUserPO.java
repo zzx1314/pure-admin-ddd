@@ -1,4 +1,4 @@
-package com.pure.infrastructure.persistent.po;
+package com.pure.infrastructure.persistent.sysuser.po;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;

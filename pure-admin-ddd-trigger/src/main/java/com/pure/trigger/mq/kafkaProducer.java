@@ -1,3 +1,4 @@
+/*
 package com.pure.trigger.mq;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -31,17 +32,21 @@ public class kafkaProducer {
         }
     }
 
-    /**
+    */
+/**
      * 简单的生产泽
-     */
+     *//*
+
     @GetMapping("/kafka/normal/{message}")
     public void sendNormalMessage(@PathVariable("message") String message) {
         kafkaTemplate.send("sb_topic", message);
     }
 
-    /**
+    */
+/**
      * 生产者回调的第一种写法
-     */
+     *//*
+
     @GetMapping("/kafka/callbackOne/{message}")
     public void sendCallbackOneMessage(@PathVariable("message") String message) {
         kafkaTemplate.send("sb_topic", message).addCallback(new SuccessCallback<SendResult<String, Object>>() {
@@ -65,9 +70,11 @@ public class kafkaProducer {
         });
     }
 
-    /**
+    */
+/**
      * 回调的第二种写法
-     */
+     *//*
+
     @GetMapping("/kafka/callbackTwo/{message}")
     public void sendCallbackTwoMessage(@PathVariable("message") String message) {
         kafkaTemplate.send("sb_topic", message).addCallback(new ListenableFutureCallback<SendResult<String, Object>>() {
@@ -84,20 +91,24 @@ public class kafkaProducer {
         });
     }
 
-    /**
+    */
+/**
      * 生产者事务
      * @param message
-     */
+     *//*
+
     @GetMapping("/kafka/transaction/{message}")
     public void sendTransactionMessage(@PathVariable("message") String message) {
         //声明事务：后面报错消息不会发出去
         kafkaTemplate.executeInTransaction(new KafkaOperations.OperationsCallback<String, Object, Object>() {
             @Override
             public Object doInOperations(KafkaOperations<String, Object> operations) {
-                /*List<String> messages = List.of("hello", "world", "spring", "kafka", "message");
+                */
+/*List<String> messages = List.of("hello", "world", "spring", "kafka", "message");
                 for (String one:messages){
                     operations.send("sb_topic", one);
-                }*/
+                }*//*
+
                 //throw new RuntimeException("fail");
                 return true;
             }
@@ -111,3 +122,4 @@ public class kafkaProducer {
 
 
 }
+*/

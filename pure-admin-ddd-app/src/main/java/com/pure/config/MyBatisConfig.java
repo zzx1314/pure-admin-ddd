@@ -8,6 +8,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @Slf4j
 @EnableTransactionManagement
-@MapperScan("com.pure.infrastructure.persistent.dao")
+@MapperScan("com.pure.infrastructure.persistent.**")
 public class MyBatisConfig {
 }

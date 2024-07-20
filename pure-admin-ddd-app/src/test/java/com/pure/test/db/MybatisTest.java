@@ -2,7 +2,7 @@ package com.pure.test.db;
 
 import com.pure.Application;
 import com.pure.domain.user.repository.ISysUserRepository;
-import com.pure.infrastructure.persistent.po.SysUserPO;
+import com.pure.infrastructure.persistent.sysuser.po.SysUserPO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

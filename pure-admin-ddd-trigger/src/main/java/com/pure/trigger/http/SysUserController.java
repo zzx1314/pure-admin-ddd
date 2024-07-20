@@ -19,4 +19,9 @@ public class SysUserController {
     public Object getUser(@PathVariable("id") Long id) {
         return sysUserRepository.selectById(id).orElse(null);
     }
+
+    @GetMapping("/getUserByName/{name}")
+    public Object getUserByName(@PathVariable("name") String name) {
+        return sysUserRepository.getSysUserByUsername(name);
+    }
 }

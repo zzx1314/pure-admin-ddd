@@ -41,11 +41,11 @@ public class KafkaConsumer {
     }*/
 
     // 批量消费也一样，异常处理器的message.getPayload()也可以拿到各条消息的信息
-    @KafkaListener(topics = "sb_topic",errorHandler="consumerAwareErrorHandler")
+    /*@KafkaListener(topics = "sb_topic",errorHandler="consumerAwareErrorHandler")
     public void onMessage5(List<ConsumerRecord<?, ?>> records) throws Exception {
         System.out.println("批量消费一次...");
         throw new Exception("批量消费-模拟异常");
-    }
+    }*/
 
 
 }

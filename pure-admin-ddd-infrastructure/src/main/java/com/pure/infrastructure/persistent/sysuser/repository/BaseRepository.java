@@ -1,9 +1,8 @@
-package com.pure.infrastructure.persistent.repository;
+package com.pure.infrastructure.persistent.sysuser.repository;
 
 import com.pure.domain.base.repository.IBaseRepository;
 import com.pure.infrastructure.persistent.mapper.MyMapper;
 import io.mybatis.activerecord.MapperRecord;
-import io.mybatis.mapper.BaseMapper;
 
 import java.io.Serializable;
 import java.util.Optional;
